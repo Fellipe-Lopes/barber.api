@@ -18,27 +18,29 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "clientes")
-public class ClienteModel {
+@Table(name = "funcionarios")
+public class FuncionarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
 
     @Column(nullable = false)
     private String nome;
 
-    private String contato;
-
     @Column(nullable = false, unique = true)
     private String email;
+
+    private String contato;
 
     @Column(nullable = false)
     private String senha;
 
+    private double salario;
+
     @Column(nullable = false)
     private Boolean ativo = true;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AgendamentoModel> agendamentos = new ArrayList<>();
 }

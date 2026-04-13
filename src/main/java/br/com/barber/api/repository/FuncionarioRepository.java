@@ -5,10 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.barber.api.model.ClienteModel;
+import br.com.barber.api.model.FuncionarioModel;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<ClienteModel, Long> {
+public interface FuncionarioRepository extends JpaRepository<FuncionarioModel, Long> {
 
-    Optional<ClienteModel> findByEmail(String email);
+    Optional<FuncionarioModel> findByEmail(String email);
 }
